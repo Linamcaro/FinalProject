@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class MouseInputPosition : MonoBehaviour
 {
+    //Detecta la posicion del mouse respecto a un objeto en una capa especifica
+
     [SerializeField] private Camera sceneCamera;
     [SerializeField] private LayerMask placementLayerMask;
     
