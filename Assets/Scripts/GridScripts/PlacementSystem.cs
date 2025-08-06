@@ -13,28 +13,31 @@ public class PlacementSystem : MonoBehaviour
 
     void Update()
     {
-        Vector3 mousePosition = mouseInputPositionScript.GetMousePositionInScene();
-
-        Vector3Int gridPosition = grid.WorldToCell(mousePosition);
-
-        mouseIndicatorPosition.transform.position = grid.CellToWorld(gridPosition);
-
-        if (filledCells.Contains(gridPosition))
+        if (GameManager.Instance.CurrentGameState == GameManager.GameState.waitingToStart)
         {
-            indicatorMaterial.color = Color.red;
-        }
-        else
-        {
-            indicatorMaterial.color = Color.green;
-        }
+            Vector3 mousePosition = mouseInputPositionScript.GetMousePositionInScene();
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (!filledCells.Contains(gridPosition))
+            Vector3Int gridPosition = grid.WorldToCell(mousePosition);
+
+            mouseIndicatorPosition.transform.position = grid.CellToWorld(gridPosition);
+
+            if (filledCells.Contains(gridPosition))
             {
-                Instantiate(prefabTestTower, grid.CellToWorld(gridPosition), Quaternion.identity);
+                indicatorMaterial.color = Color.red;
+            }
+            else
+            {
+                indicatorMaterial.color = Color.green;
+            }
 
-                filledCells.Add(gridPosition);
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (!filledCells.Contains(gridPosition))
+                {
+                    Instantiate(prefabTestTower, grid.CellToWorld(gridPosition), Quaternion.identity);
+
+                    filledCells.Add(gridPosition);
+                }
             }
         }
     }
