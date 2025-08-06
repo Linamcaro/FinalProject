@@ -3,19 +3,24 @@ using UnityEngine.EventSystems;
 using DG.Tweening;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class MenuText : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
 {
-    public GameObject Sombra, Fondo, flecha;
+    public GameObject Sombra, Fondo, flecha, fantasma;
 
     private Image FondoFade, FlechaFade;
     private RectTransform shadowRectTransform, TextRect;
     private Transform shadowTransform;
     private Vector2 sombraPosInicial;
+    public Transform  GhostInicial;
+    private Transform GhostPos;
+    public Transform GhostObjective;
     private Transform textoTransform;
     public Animator WallLeft, WallRight;
 
     private Vector2 textoPosInicial;
+    private Vector3 GhostInitPoint;
 
     private void Start()
     {
@@ -23,6 +28,9 @@ public class MenuText : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         shadowTransform = Sombra.GetComponent<Transform>();
         sombraPosInicial = shadowRectTransform.anchoredPosition;
         TextRect = GetComponent<RectTransform>();
+        GhostPos = fantasma.GetComponent<Transform>();
+        GhostInitPoint = GhostInicial.position;
+
 
         textoTransform = GetComponent<Transform>();
         textoPosInicial = textoTransform.position;
@@ -37,6 +45,7 @@ public class MenuText : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         shadowTransform.DOScale(new Vector3(1.1f, 1.1f, 1.1f), 0.1f).SetEase(Ease.InOutSine);
         shadowRectTransform.DOAnchorPosX(sombraPosInicial.x + 10f, 0.1f).SetEase(Ease.InOutSine);
         shadowRectTransform.DOAnchorPosY(sombraPosInicial.y - 10f, 0.1f).SetEase(Ease.InOutSine);
+        GhostPos.DOMove(GhostObjective.position, 0.2f).SetEase(Ease.InOutSine);
 
         FondoFade.DOFade(0.3f, 0.1f).SetEase(Ease.InOutSine);
         // FlechaFade.DOFade(1, 0.1f).SetEase(Ease.InOutSine); 
@@ -49,6 +58,7 @@ public class MenuText : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         shadowTransform.DOScale(Vector3.one, 0.1f).SetEase(Ease.InOutSine);
         shadowRectTransform.DOAnchorPos(sombraPosInicial, 0.1f).SetEase(Ease.InOutSine);
         FondoFade.DOFade(0, 0.1f).SetEase(Ease.InOutSine);
+        GhostPos.DOMove(GhostInitPoint, 0.2f).SetEase(Ease.InOutSine);
         // FlechaFade.DOFade(0, 0.1f).SetEase(Ease.InOutSine);
 
         textoTransform.DOScale(Vector3.one, 0.1f).SetEase(Ease.InOutSine);
@@ -77,5 +87,6 @@ public class MenuText : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         WallLeft.Play("WallLeftIn");
         WallRight.Play("WallRightIn");
         yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("MainGameScene");
     }
 }
