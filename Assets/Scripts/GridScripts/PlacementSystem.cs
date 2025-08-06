@@ -36,10 +36,6 @@ public class PlacementSystem : MonoBehaviour
 
                 filledCells.Add(gridPosition);
             }
-            else
-            {
-                Debug.Log("La celda ya esta ocupada");
-            }
         }
     }
 }

@@ -13,7 +13,7 @@ public class MouseInputPosition : MonoBehaviour
     {
         Ray ray = sceneCamera.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out RaycastHit hit, 100f, placementLayerMask))
+        if (Physics.Raycast(ray, out RaycastHit hit, 200f, placementLayerMask))
         {
             lastPosition = hit.point;
         }
