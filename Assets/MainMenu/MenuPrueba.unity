@@ -5152,10 +5152,25 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 126
       objectReference: {fileID: 0}
+    - target: {fileID: 5446477391288023246, guid: b713585f24f940f4eadb10319818ef40, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: eb999b7fe397b96478701d5bca46a84d, type: 2}
+    - target: {fileID: 5446477392291710641, guid: b713585f24f940f4eadb10319818ef40, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0bc2c0d54c7add346a3e6c303be08d67, type: 2}
+    - target: {fileID: 5446477392291710641, guid: b713585f24f940f4eadb10319818ef40, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f3891cc6bcaa9e143817a51b2930834d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5446477392291710646, guid: b713585f24f940f4eadb10319818ef40, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1321197412}
   m_SourcePrefab: {fileID: 100100000, guid: b713585f24f940f4eadb10319818ef40, type: 3}
 --- !u!1001 &519211398
 PrefabInstance:
@@ -5778,7 +5793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.83137256}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.5058824}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -14644,6 +14659,23 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5a6cf8986afb0543949930ead35cbf9, type: 3}
+--- !u!1 &1321197408 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5446477392291710646, guid: b713585f24f940f4eadb10319818ef40, type: 3}
+  m_PrefabInstance: {fileID: 513898087}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1321197412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321197408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656a5c1a089853348b310ef31f41fda4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1326134957
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15938,10 +15970,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: LittleGhost_LP (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2676405798684617452, guid: 4b5b08dfd84e3c342b10a4e2ed977d48, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 02d983be79be3c14cb31bd18858c5266, type: 2}
+    - target: {fileID: 2676405798898811830, guid: 4b5b08dfd84e3c342b10a4e2ed977d48, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: bd19878bcba6c5e438c87e16021000e4, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2676405798898811828, guid: 4b5b08dfd84e3c342b10a4e2ed977d48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1842838411}
   m_SourcePrefab: {fileID: 100100000, guid: 4b5b08dfd84e3c342b10a4e2ed977d48, type: 3}
 --- !u!4 &1457500626 stripped
 Transform:
@@ -20309,6 +20352,23 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5a6cf8986afb0543949930ead35cbf9, type: 3}
+--- !u!1 &1842838408 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2676405798898811828, guid: 4b5b08dfd84e3c342b10a4e2ed977d48, type: 3}
+  m_PrefabInstance: {fileID: 1452441762}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1842838411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842838408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a63b1b2a1e09a0a4e85abe6b0b80ef2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1850290812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20554,6 +20614,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 670213895}
     m_Modifications:
+    - target: {fileID: 2602231374530383180, guid: 855c90c429434444fbe3ca2b5507ab04, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0bc2c0d54c7add346a3e6c303be08d67, type: 2}
+    - target: {fileID: 2602231374717726856, guid: 855c90c429434444fbe3ca2b5507ab04, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4e02fbb577b9ec34f9e2581250bf9c23, type: 2}
     - target: {fileID: 2602231374797837610, guid: 855c90c429434444fbe3ca2b5507ab04, type: 3}
       propertyPath: m_Name
       value: LittleGhost_LP (4)
