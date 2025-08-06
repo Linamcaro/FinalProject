@@ -13710,7 +13710,7 @@ Camera:
   far clip plane: 100
   field of view: 60
   orthographic: 1
-  orthographic size: 16
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -13735,7 +13735,7 @@ Transform:
   m_GameObject: {fileID: 1053381354}
   serializedVersion: 2
   m_LocalRotation: {x: 0.35355338, y: 0.35355338, z: -0.1464466, w: 0.8535535}
-  m_LocalPosition: {x: 14.9, y: 15, z: -12.1}
+  m_LocalPosition: {x: 16.61, y: 15, z: -11.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26508,6 +26508,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8873207348182684170, guid: fb421b38a51808f4fb63a47dec124ecf, type: 3}
+      propertyPath: prefabTestTower
+      value: 
+      objectReference: {fileID: 3678863178322446907, guid: 4b693edeefceb6049a1c2aa92cb49326, type: 3}
     - target: {fileID: 9204122603985379330, guid: fb421b38a51808f4fb63a47dec124ecf, type: 3}
       propertyPath: m_Layer
       value: 7
