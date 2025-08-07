@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9161972174396006491}
+  - component: {fileID: -5974381058364001090}
   m_Layer: 0
   m_Name: Tower3
   m_TagString: Untagged
@@ -33,6 +34,25 @@ Transform:
   - {fileID: 6896408744818083609}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-5974381058364001090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2466346173065241218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b84ce45f5e4c8e4a940ede062dec418, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towersSC: {fileID: 11400000, guid: 0d381704bef0de6498117781a8c29de6, type: 2}
+  flechaPrefab: {fileID: 3824760593058762974, guid: fa49d00b19655604ba16dc8ddef6fd07, type: 3}
+  puntoDisparo: {fileID: 4760665066755874279}
+  tiempoEntreDisparos: 0
+  damage: 0
+  rango: 0
+  tiempoSiguienteDisparo: 0
 --- !u!1001 &5015882825621387788
 PrefabInstance:
   m_ObjectHideFlags: 0
