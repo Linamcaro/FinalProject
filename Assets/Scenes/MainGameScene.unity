@@ -18053,7 +18053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flechaPrefab: {fileID: 3824760593058762974, guid: fa49d00b19655604ba16dc8ddef6fd07, type: 3}
-  "tama\xF1oPool": 20
+  "tama\xF1oPool": 90
 --- !u!4 &1417717039
 Transform:
   m_ObjectHideFlags: 0
