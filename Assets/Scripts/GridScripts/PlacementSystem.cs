@@ -7,13 +7,13 @@ public class PlacementSystem : MonoBehaviour
     [SerializeField] private Material indicatorMaterial;
     [SerializeField] private MouseInputPosition mouseInputPositionScript;
     [SerializeField] private Grid grid;
-    [SerializeField] private GameObject prefabTestTower;
+    [SerializeField] private TowerPoolSystem towerQueueScript;
 
     private HashSet<Vector3Int> filledCells = new HashSet<Vector3Int>();
 
     void Update()
     {
-        if (GameManager.Instance.CurrentGameState == GameManager.GameState.waitingToStart)
+        if (GameManager.Instance.CurrentGameState == GameManager.GameState.Playing)
         {
             Vector3 mousePosition = mouseInputPositionScript.GetMousePositionInScene();
 
@@ -34,9 +34,16 @@ public class PlacementSystem : MonoBehaviour
             {
                 if (!filledCells.Contains(gridPosition))
                 {
-                    Instantiate(prefabTestTower, grid.CellToWorld(gridPosition), Quaternion.identity);
+                    GameObject nextTower = towerQueueScript.GetNextTower();
 
-                    filledCells.Add(gridPosition);
+                    towerQueueScript.UpdateQueueUI();
+
+                    if (nextTower != null)
+                    {
+                        Instantiate(nextTower, grid.CellToWorld(gridPosition), Quaternion.identity);
+
+                        filledCells.Add(gridPosition);
+                    }
                 }
             }
         }

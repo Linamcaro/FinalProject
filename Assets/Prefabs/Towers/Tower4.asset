@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a7b715bbf5eb24492c12a6fc7d68d5, type: 3}
   m_Name: Tower4
   m_EditorClassIdentifier: 
-  SCDamage: 30
-  SCShootingTime: 8
-  SCRange: 6
+  SCDamage: 25
+  SCShootingTime: 1
+  SCRange: 10

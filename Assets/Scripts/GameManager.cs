@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
                 Cursor.visible = true;
                 break;
             case GameState.Playing:
-                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 break;
             case GameState.EndGame:
