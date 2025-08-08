@@ -576,7 +576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 100
-  towerDamage: 100
+  towerDamage: 20
 --- !u!1 &4809482568218704113
 GameObject:
   m_ObjectHideFlags: 0
