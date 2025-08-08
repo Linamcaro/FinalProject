@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class MainTower : MonoBehaviour
 {
 
-    public float Health;
+    public float Health = 100;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,16 +14,12 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         if (Health <= 0)
-            Death();
+            Lose();
     }
 
-    public void RecibirDano(float damage)
+    public void Lose()
     {
-        Health -= damage;
-    }
-
-    public void Death()
-    {
-        gameObject.SetActive(false);
+        GameManager.Instance.canSpawn = false;
+        GameManager.Instance.SetGameState(GameManager.GameState.EndGame);    
     }
 }
