@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     {
         get { return _instance; }
     }
+
+    public float countdownTostartTimer { get; set; } = 30;
     public GameState CurrentGameState { get; private set; }
     public static event Action<GameState> OnGameStateChanged;
     public bool canSpawn;
@@ -38,6 +40,24 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         SetGameState(GameState.MainMenu);
+    }
+
+
+    void Update()
+    {
+        if (CurrentGameState == GameState.Playing)
+        {
+            StartCountDown();
+        }
+    }
+
+    private void StartCountDown()
+    {
+        countdownTostartTimer -= Time.deltaTime;
+        if (countdownTostartTimer < 0f)
+        {
+            SetGameState(GameState.EndGame);
+        }
     }
 
     public void SetGameState(GameState newState)
