@@ -13,7 +13,7 @@ public class MenuText : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     private RectTransform shadowRectTransform, TextRect;
     private Transform shadowTransform;
     private Vector2 sombraPosInicial;
-    public Transform  GhostInicial;
+    public Transform GhostInicial;
     private Transform GhostPos;
     public Transform GhostObjective;
     private Transform textoTransform;
@@ -87,6 +87,7 @@ public class MenuText : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         WallLeft.Play("WallLeftIn");
         WallRight.Play("WallRightIn");
         yield return new WaitForSeconds(1);
+        GameManager.Instance.SetGameState(GameManager.GameState.waitingToStart);
         SceneManager.LoadScene("MainGameScene");
     }
 }

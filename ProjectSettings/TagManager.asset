@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Destino
+  - Arrow
+  - Enemy
   layers:
   - Default
   - TransparentFX

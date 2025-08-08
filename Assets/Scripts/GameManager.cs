@@ -10,13 +10,16 @@ public class GameManager : MonoBehaviour
     }
     public GameState CurrentGameState { get; private set; }
     public static event Action<GameState> OnGameStateChanged;
+    public bool canSpawn;
 
     public enum GameState
     {
+        MainMenu,
         waitingToStart,
         Playing,
         Paused,
-        EndGame
+        EndGame,
+        WinGame
     }
 
     private void Awake()
@@ -32,6 +35,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        SetGameState(GameState.MainMenu);
+    }
+
     public void SetGameState(GameState newState)
     {
         CurrentGameState = newState;
@@ -39,15 +47,23 @@ public class GameManager : MonoBehaviour
 
         switch (newState)
         {
+            case GameState.MainMenu:
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                break;
             case GameState.waitingToStart:
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 break;
             case GameState.Playing:
                 Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
+                Cursor.visible = true;
                 break;
             case GameState.EndGame:
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                break;
+            case GameState.WinGame:
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 break;
