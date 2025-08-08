@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Tower1
   m_EditorClassIdentifier: 
   SCDamage: 10
-  SCShootingTime: 3
-  SCRange: 6
+  SCShootingTime: 2
+  SCRange: 8

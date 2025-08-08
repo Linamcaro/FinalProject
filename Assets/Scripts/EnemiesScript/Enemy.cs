@@ -26,6 +26,7 @@ public class Enemy : MonoBehaviour
     public void Death()
     {
         gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 
     void OnCollisionEnter(Collision collision)
@@ -33,7 +34,10 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Destino"))
         {
             MainTower mainTower = collision.gameObject.GetComponent<MainTower>();
-            mainTower.Health -= towerDamage; 
+            mainTower.Health -= towerDamage;
+
+            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 }
