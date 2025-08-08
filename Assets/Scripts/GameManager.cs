@@ -18,7 +18,8 @@ public class GameManager : MonoBehaviour
         waitingToStart,
         Playing,
         Paused,
-        EndGame
+        EndGame,
+        WinGame
     }
 
     private void Awake()
@@ -59,6 +60,10 @@ public class GameManager : MonoBehaviour
                 Cursor.visible = true;
                 break;
             case GameState.EndGame:
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                break;
+            case GameState.WinGame:
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 break;
