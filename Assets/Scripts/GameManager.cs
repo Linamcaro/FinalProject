@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -9,10 +10,12 @@ public class GameManager : MonoBehaviour
         get { return _instance; }
     }
 
-    public float countdownTostartTimer { get; set; } = 30;
+    public float countdownTostartTimer { get; set; } = 60;
     public GameState CurrentGameState { get; private set; }
     public static event Action<GameState> OnGameStateChanged;
     public bool canSpawn;
+
+   
 
     public enum GameState
     {
@@ -48,15 +51,17 @@ public class GameManager : MonoBehaviour
         if (CurrentGameState == GameState.Playing)
         {
             StartCountDown();
+            
         }
     }
 
     private void StartCountDown()
     {
         countdownTostartTimer -= Time.deltaTime;
+        
         if (countdownTostartTimer < 0f)
         {
-            SetGameState(GameState.EndGame);
+            SetGameState(GameState.WinGame);
         }
     }
 

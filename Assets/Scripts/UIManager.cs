@@ -9,9 +9,10 @@ public class UIManager : MonoBehaviour
 {
     public GameObject Texto1, Texto2, Texto3;
     public Image Panel;
-    public TMP_Text Perdiste;
+    public TMP_Text Perdiste, Ganaste;
     public Button restart, volver;
     public Animator transition, transition2;
+     public TMP_Text Count;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,7 +22,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Count.text = "Tiempo para defender: " + GameManager.Instance.countdownTostartTimer.ToString();
     }
 
     private void OnEnable()
@@ -57,6 +58,17 @@ public class UIManager : MonoBehaviour
             Panel.DOFade(1, 0.7f);
             Perdiste.DOFade(1, 1.5f);
             Perdiste.transform.DOScale(new Vector3(1, 1, 1), 3f).SetEase(Ease.OutBack);
+            restart.transform.DOScale(new Vector3(1, 1, 1), 4f).SetEase(Ease.OutBack);
+            volver.transform.DOScale(new Vector3(1, 1, 1), 4f).SetEase(Ease.OutBack);
+
+        }
+
+
+        if (nuevoEstado == GameManager.GameState.WinGame)
+        {
+            Panel.DOFade(1, 0.7f);
+            Ganaste.DOFade(1, 1.5f);
+            Ganaste.transform.DOScale(new Vector3(1, 1, 1), 3f).SetEase(Ease.OutBack);
             restart.transform.DOScale(new Vector3(1, 1, 1), 4f).SetEase(Ease.OutBack);
             volver.transform.DOScale(new Vector3(1, 1, 1), 4f).SetEase(Ease.OutBack);
 
